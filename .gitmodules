@@ -1,0 +1,9 @@
+[submodule "learn"]
+	path = learn
+	url = https://github.com/lachlanchen/LazyLearn.git
+[submodule "earn"]
+	path = earn
+	url = https://github.com/lachlanchen/LazyEarn.git
+[submodule "IDEAS"]
+	path = IDEAS
+	url = git@github.com:lachlanchen/IDEAS.git
