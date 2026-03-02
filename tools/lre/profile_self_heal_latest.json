@@ -1,0 +1,41 @@
+{
+  "diagnosis": [
+    "Current query set drifts from identity anchors (generic psych terms and broad founder language), increasing homonym noise and weak profile precision.",
+    "`prompt_lre_profile_research.sh` routes engines with coarse keyword checks; profile intent is mostly identity/entity resolution, not news discovery.",
+    "Websearch evidence quality is undercounted/misclassified: empty `query-*.json` files pass file-existence checks, while `weak_signal` can remain false when screenshots exist but structured evidence is missing.",
+    "Open behavior (`--open-top-results 5`) is rank-based without domain trust/allowlist, so irrelevant same-name profiles can be opened and contaminate evidence.",
+    "Profile synthesis consumes only `query-*.json`; when these are empty/invalid, downstream grounding quality collapses despite rich `.txt` logs/screenshots."
+  ],
+  "query_strategy_updates": [
+    "Edit `lab_prompt_tools/lre/profile_queries.txt` into two sections: `# rollback-anchor-first` (4 exact-anchor queries) and `# expansion-after-anchor-match` (2-4 broader queries).",
+    "Remove/park generic non-anchor psych queries (e.g., `founder operator strengths weaknesses blind spots`) until anchor confidence is established.",
+    "Require first-pass query success criteria: at least two of three anchors resolved (GitHub, Scholar user id, website) before expansion queries execute.",
+    "Prefer `site:` and exact-phrase constraints for identity queries; keep expansions broad only after anchor lock."
+  ],
+  "prompt_patch": [
+    "Patch `lab_prompt_tools/lre/lre_profile_prompt.md` with an explicit anchor-first identity protocol: resolve GitHub/Scholar/website first, then accept LinkedIn only if cross-referenced from GitHub profile/about links.",
+    "Patch `lab_prompt_tools/lre/lre_profile_prompt.md` to require every strength/weakness/risk claim be backed by at least one authoritative source link; otherwise mark as evidence gap, not a claim.",
+    "Patch `lab_prompt_tools/lre/lre_self_evolve_profile_prompt.md` to require reporting `anchor_match_rate`, `non_empty_artifact_rate`, and `identity_conflict_count` before recommending query expansion.",
+    "Patch `lab_prompt_tools/lre/lre_self_evolve_prompt.md` to align terminology with schema key `diagnosis` (not `analysis`) and force rollback-query recommendations when anchor drift is detected."
+  ],
+  "script_patch": [
+    "Patch `lab_prompt_tools/lre/prompt_lre_profile_research.sh`: replace `choose_engine` with intent router (`google-scholar` for scholar/publication/citation, `google-news` for interview/press/news/date-sensitive terms, else `google`).",
+    "Patch `lab_prompt_tools/lre/prompt_lre_profile_research.sh`: in `run_queries`, treat zero-byte/invalid `query-*.json` as failure (not just missing file) and trigger fallback+normalization.",
+    "Patch `lab_prompt_tools/lre/prompt_lre_profile_research.sh`: add anchor preflight step using `--open-url` on GitHub/Scholar/website before free-form queries, and only run LinkedIn verification query after anchor preflight success.",
+    "Patch `lab_prompt_tools/lre/prompt_lre_profile_research.sh`: update weak-signal logic to flag weak when `success_files/json_files < 0.6` OR `non_empty_json_files == 0`, regardless of screenshot count.",
+    "Create `lab_prompt_tools/lre/profile_source_validator.py`: score domains (`github.com`, `scholar.google.com`, `lazying.art` high trust), detect same-name collisions, and emit `validated_sources.json`.",
+    "Create `lab_prompt_tools/lre/profile_evidence_normalizer.py`: parse `query-*.txt` immersive logs into normalized JSON (`query`, `opened`, `titles`, `urls`, `summaries`) when raw JSON is empty.",
+    "Patch `lab_prompt_tools/lre/prompt_lre_self_evolve.sh`: validation `required` list currently expects `analysis`; change to `diagnosis` to match `lre_self_evolve_schema.json` and prevent false validation failures.",
+    "Optional split decision: keep `prompt_lre_profile_research.sh` as orchestrator, but call three helpers (`profile_query_planner.py`, `profile_source_validator.py`, `profile_evidence_normalizer.py`) for modular evolution."
+  ],
+  "recommended_queries": [
+    "github.com/lachlanchen",
+    "site:scholar.google.com \"Kdqr_AcAAAAJ\"",
+    "\"The art of Lazying\" \"lazying.art\"",
+    "site:github.com/lachlanchen \"lazying.art\"",
+    "site:github.com/lachlanchen linkedin.com/in",
+    "\"Lachlan Chen\" LazyingArt automation systems",
+    "lazying.art projects research automation"
+  ],
+  "next_experiment": "Apply the query/prompt/script patches, run `lab_prompt_tools/lre/prompt_lre_profile_research.sh --run-id 20260303-profile-anchor-v1 --no-auto-heal`, and accept only if anchor_match_rate>=0.67, non_empty_artifact_rate>=0.70, and zero unverified-LinkedIn claims in final evidence."
+}
