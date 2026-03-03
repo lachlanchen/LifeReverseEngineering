@@ -36,10 +36,13 @@
         min-height: 100%;
         background:
           radial-gradient(circle at 10% 10%, #e8f1ff 0%, transparent 35%),
-          radial-gradient(circle at 88% 8%, #ecfff8 0%, transparent 30%),
-          var(--bg);
+          radial-gradient(circle at 88% 8%, #ecfff8 0%, transparent 30%), var(--bg);
         color: var(--text);
-        font-family: Manrope, system-ui, -apple-system, sans-serif;
+        font-family:
+          Manrope,
+          system-ui,
+          -apple-system,
+          sans-serif;
       }
 
       .wrap {
@@ -53,6 +56,24 @@
         justify-content: space-between;
         gap: 14px;
         align-items: center;
+      }
+
+      .logos {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+
+      .logos img.lazying {
+        height: 64px;
+        width: auto;
+      }
+
+      .logos img.aginti {
+        height: 68px;
+        width: auto;
       }
 
       .brand h1 {
@@ -264,6 +285,10 @@
     <main class="wrap">
       <header class="top">
         <div class="brand">
+          <div class="logos">
+            <img class="lazying" src="./logos/lazyingart-logo.png" alt="LazyingArt logo" />
+            <img class="aginti" src="./logos/aginti-logo-wordmark.png" alt="AgInTi logo" />
+          </div>
           <h1>LifeReverseEngineering</h1>
           <p>Deep research pipeline for Learn, Earn, and IDEAS.</p>
         </div>
@@ -276,8 +301,16 @@
           drafts, and research directions, then syncs latest artifacts into dedicated repos.
         </p>
         <div class="actions">
-          <a class="btn primary" href="https://github.com/lachlanchen/LifeReverseEngineering" target="_blank" rel="noreferrer">Open Repository</a>
-          <a class="btn ghost" href="https://lre.lazying.art/" target="_blank" rel="noreferrer">Live Domain</a>
+          <a
+            class="btn primary"
+            href="https://github.com/lachlanchen/LifeReverseEngineering"
+            target="_blank"
+            rel="noreferrer"
+            >Open Repository</a
+          >
+          <a class="btn ghost" href="https://lre.lazying.art/" target="_blank" rel="noreferrer"
+            >Live Domain</a
+          >
         </div>
       </section>
 
