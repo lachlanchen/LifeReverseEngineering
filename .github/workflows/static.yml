@@ -32,6 +32,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # Deploy website folder only (keeps custom-domain site deterministic)
           path: "website"
       - name: Deploy to GitHub Pages
         id: deployment
