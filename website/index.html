@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifeReverseEngineering</title>
+    <meta
+      name="description"
+      content="LifeReverseEngineering - deep research workflow for learn, earn, and ideas."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Source+Serif+4:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7fafc;
+        --surface: #ffffff;
+        --line: #d9e3ef;
+        --text: #12304f;
+        --muted: #4b6682;
+        --blue: #1766d0;
+        --teal: #0ea5a8;
+        --amber: #c77f00;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background:
+          radial-gradient(circle at 10% 10%, #e8f1ff 0%, transparent 35%),
+          radial-gradient(circle at 88% 8%, #ecfff8 0%, transparent 30%),
+          var(--bg);
+        color: var(--text);
+        font-family: Manrope, system-ui, -apple-system, sans-serif;
+      }
+
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 26px 18px 56px;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        align-items: center;
+      }
+
+      .brand h1 {
+        margin: 0;
+        font-family: "Source Serif 4", serif;
+        font-size: clamp(34px, 6vw, 56px);
+        line-height: 1.03;
+      }
+
+      .brand p {
+        margin: 6px 0 0;
+        color: var(--muted);
+      }
+
+      .badge {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--blue);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 8px 12px;
+      }
+
+      .hero {
+        margin-top: 16px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(23, 102, 208, 0.07);
+      }
+
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .actions {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .btn {
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .btn.primary {
+        color: #fff;
+        background: linear-gradient(90deg, var(--blue), #22a0f3);
+      }
+
+      .btn.ghost {
+        border: 1px solid #bcd0e8;
+        color: var(--blue);
+        background: #f4f9ff;
+      }
+
+      .section {
+        margin-top: 14px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px;
+      }
+
+      .section h2 {
+        margin: 0 0 8px;
+        font-size: 24px;
+      }
+
+      .section p {
+        margin: 0 0 12px;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px;
+        background: #fff;
+      }
+
+      .card h3 {
+        margin: 0 0 6px;
+        font-size: 17px;
+      }
+
+      .card p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .step {
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        padding: 12px;
+        background: #fafcff;
+      }
+
+      .step strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--blue);
+      }
+
+      .step span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .kpi {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        padding: 12px;
+      }
+
+      .kpi strong {
+        display: block;
+        font-size: 23px;
+      }
+
+      .kpi span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .kpi.learn strong {
+        color: var(--teal);
+      }
+
+      .kpi.earn strong {
+        color: var(--amber);
+      }
+
+      .kpi.ideas strong {
+        color: var(--blue);
+      }
+
+      .footer {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      code {
+        background: #f1f6fc;
+        border: 1px solid #d4e1f0;
+        padding: 1px 5px;
+        border-radius: 6px;
+      }
+
+      @media (max-width: 980px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .flow {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .kpis {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 620px) {
+        .top {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .flow,
+        .kpis {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="top">
+        <div class="brand">
+          <h1>LifeReverseEngineering</h1>
+          <p>Deep research pipeline for Learn, Earn, and IDEAS.</p>
+        </div>
+        <div class="badge">Single-Copy · Evidence-Aware · Iterative</div>
+      </header>
+
+      <section class="hero">
+        <p>
+          LRE converts profile context into practical outputs: reading plans, investment thesis
+          drafts, and research directions, then syncs latest artifacts into dedicated repos.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/lachlanchen/LifeReverseEngineering" target="_blank" rel="noreferrer">Open Repository</a>
+          <a class="btn ghost" href="https://lre.lazying.art/" target="_blank" rel="noreferrer">Live Domain</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Repo Tracks</h2>
+        <p>Three tracks map outcomes into maintainable sub-repositories.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Learn</h3>
+            <p>Book recommendations, skill paths, and learning notes for long-term growth.</p>
+          </article>
+          <article class="card">
+            <h3>Earn</h3>
+            <p>Investment ideas, risk framing, and thesis updates for decision support.</p>
+          </article>
+          <article class="card">
+            <h3>IDEAS</h3>
+            <p>Research topics, proposal drafts, and follow-up milestones.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Pipeline</h2>
+        <p>Run stages are chained to keep context handoff and output quality stable.</p>
+        <div class="flow">
+          <div class="step">
+            <strong>1) Profile</strong>
+            <span>Build identity/evidence baseline and confidence mapping.</span>
+          </div>
+          <div class="step">
+            <strong>2) Books</strong>
+            <span>Generate books aligned to strengths, weaknesses, and growth goals.</span>
+          </div>
+          <div class="step">
+            <strong>3) Investments</strong>
+            <span>Draft opportunities and risk-aware thesis summaries.</span>
+          </div>
+          <div class="step">
+            <strong>4) Ideas</strong>
+            <span>Create research and product direction candidates.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Operational Snapshot</h2>
+        <p>Current target behavior for every run cycle.</p>
+        <div class="kpis">
+          <div class="kpi learn">
+            <strong>Latest</strong>
+            <span>Overwrite old snapshots with current best output</span>
+          </div>
+          <div class="kpi earn">
+            <strong>Single Copy</strong>
+            <span>Keep one canonical summary per major report</span>
+          </div>
+          <div class="kpi ideas">
+            <strong>Self-Heal</strong>
+            <span>Track recovery logs and improve prompt behaviors</span>
+          </div>
+          <div class="kpi">
+            <strong>Pages</strong>
+            <span>Deploy from <code>website/</code> to <code>lre.lazying.art</code></span>
+          </div>
+        </div>
+      </section>
+
+      <p class="footer">
+        This site is a static light-theme page deployed by GitHub Actions from the
+        <code>website/</code> folder.
+      </p>
+    </main>
+  </body>
+</html>
