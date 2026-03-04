@@ -1,5 +1,6 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # LifeReverseEngineering
 
@@ -36,13 +37,13 @@ Im Root-Verzeichnis konzentriert sich LRE auf:
 
 ### Schnelle Bereichsuebersicht
 
-| Bereich | Primaerer Pfad | Verantwortung |
-|---|---|---|
-| 🧭 Orchestrierungs-Handoff | Root-Repo | Pipeline-Rahmung + Koordination |
-| 📄 Konsolidierter Bericht | `notes/lre_single_copy.md` | Einziger aktueller Markdown-Kurzbericht |
-| 🩺 Diagnostik | `tools/lre/` | Self-Heal-Snapshots und Logs |
-| 🌐 Oeffentliche Landingpage | `website/` | Root-GitHub-Pages-Deployment |
-| 🧠 Fachliche Ausfuehrung | `learn/`, `earn/`, `IDEAS/` | Spur-spezifische Implementierung |
+| Bereich                     | Primaerer Pfad              | Verantwortung                           |
+| --------------------------- | --------------------------- | --------------------------------------- |
+| 🧭 Orchestrierungs-Handoff  | Root-Repo                   | Pipeline-Rahmung + Koordination         |
+| 📄 Konsolidierter Bericht   | `notes/lre_single_copy.md`  | Einziger aktueller Markdown-Kurzbericht |
+| 🩺 Diagnostik               | `tools/lre/`                | Self-Heal-Snapshots und Logs            |
+| 🌐 Oeffentliche Landingpage | `website/`                  | Root-GitHub-Pages-Deployment            |
+| 🧠 Fachliche Ausfuehrung    | `learn/`, `earn/`, `IDEAS/` | Spur-spezifische Implementierung        |
 
 ## Status
 
@@ -54,14 +55,15 @@ LRE ist aktiv und optimiert fuer:
 
 ### Aktuelle operative Lage
 
-| Signal | Status |
-|---|---|
-| Root-Pipeline-Lage | ✅ Aktiv |
-| Root-Pages-Deployment | ✅ Aktiviert (`website/`) |
+| Signal                     | Status                                       |
+| -------------------------- | -------------------------------------------- |
+| Root-Pipeline-Lage         | ✅ Aktiv                                     |
+| Root-Pages-Deployment      | ✅ Aktiviert (`website/`)                    |
 | Root-i18n-README-Varianten | 🟡 Verzeichnis vorhanden, Dateien ausstehend |
-| Ausgabemodell | ✅ Single-Copy Ueberschreiben/Aktualisieren |
+| Ausgabemodell              | ✅ Single-Copy Ueberschreiben/Aktualisieren  |
 
 <a id="features"></a>
+
 ## Funktionen
 
 - Drei-Spuren-Koordinationsmodell (`learn`, `earn`, `IDEAS`) mit klaren Verantwortungsgrenzen.
@@ -109,6 +111,7 @@ LifeReverseEngineering/
 ```
 
 <a id="pipeline-logic"></a>
+
 ## Pipeline-Logik
 
 LRE laeuft als gestufte Pipeline (orchestriert durch Prompt-Tools im uebergeordneten AgInTi-Repo):
@@ -148,6 +151,7 @@ flowchart TB
 ```
 
 <a id="single-copy-output-policy"></a>
+
 ## Single-Copy-Ausgaberichtlinie
 
 Dieses Repository folgt einem Ueberschreiben/Aktualisieren-Verhalten fuer zentrale Zusammenfassungsdateien:
@@ -160,11 +164,11 @@ So bleiben taegliche/periodische Durchlaeufe sauber, auditierbar und leicht prue
 
 ### Zentrale Artefakte und Verhalten
 
-| Artefakt | Verhalten |
-|---|---|
-| `notes/lre_single_copy.md` | Mit dem neuesten konsolidierten Bericht ueberschrieben/aktualisiert |
-| `tools/lre/profile_self_heal_latest.json` | Durch den neuesten Root-Self-Heal-Snapshot ersetzt |
-| `tools/lre/profile_self_heal_latest.log` | Neuestes Diagnostik-Log aktualisiert |
+| Artefakt                                  | Verhalten                                                           |
+| ----------------------------------------- | ------------------------------------------------------------------- |
+| `notes/lre_single_copy.md`                | Mit dem neuesten konsolidierten Bericht ueberschrieben/aktualisiert |
+| `tools/lre/profile_self_heal_latest.json` | Durch den neuesten Root-Self-Heal-Snapshot ersetzt                  |
+| `tools/lre/profile_self_heal_latest.log`  | Neuestes Diagnostik-Log aktualisiert                                |
 
 ## Voraussetzungen
 
@@ -298,14 +302,14 @@ git push origin main
 
 ## Fehlerbehebung
 
-| Symptom | Pruefen / Beheben |
-|---|---|
-| Submodule ist nach dem Klonen leer | `git submodule update --init --recursive` ausfuehren. |
-| IDEAS-Submodul-Authentifizierung schlaegt fehl | Sicherstellen, dass GitHub-SSH-Schluesselzugriff fuer `git@github.com:lachlanchen/IDEAS.git` vorhanden ist, oder Submodul-URL bei Bedarf auf HTTPS umstellen. |
-| Root-Pages-Site wurde nicht aktualisiert | Pruefen, dass geaenderte Dateien unter `website/**` oder `.github/workflows/static.yml` liegen und der Branch `main` ist. |
-| Website rendert lokal, aber nicht auf der Custom Domain | Sicherstellen, dass `website/CNAME` `lre.lazying.art` enthaelt und DNS korrekt auf GitHub Pages zeigt. |
-| Self-Heal-Bericht wirkt veraltet | Dateiaenderungszeiten in `tools/lre/` pruefen und Lauf-IDs in `notes/lre_single_copy.md` nachverfolgen. |
-| Locale-Warnungen (z. B. `LC_ALL=C.UTF-8`) erscheinen in Logs | Das ist typischerweise umgebungsbedingt und fuer die Berichterzeugung nicht fatal. |
+| Symptom                                                      | Pruefen / Beheben                                                                                                                                             |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Submodule ist nach dem Klonen leer                           | `git submodule update --init --recursive` ausfuehren.                                                                                                         |
+| IDEAS-Submodul-Authentifizierung schlaegt fehl               | Sicherstellen, dass GitHub-SSH-Schluesselzugriff fuer `git@github.com:lachlanchen/IDEAS.git` vorhanden ist, oder Submodul-URL bei Bedarf auf HTTPS umstellen. |
+| Root-Pages-Site wurde nicht aktualisiert                     | Pruefen, dass geaenderte Dateien unter `website/**` oder `.github/workflows/static.yml` liegen und der Branch `main` ist.                                     |
+| Website rendert lokal, aber nicht auf der Custom Domain      | Sicherstellen, dass `website/CNAME` `lre.lazying.art` enthaelt und DNS korrekt auf GitHub Pages zeigt.                                                        |
+| Self-Heal-Bericht wirkt veraltet                             | Dateiaenderungszeiten in `tools/lre/` pruefen und Lauf-IDs in `notes/lre_single_copy.md` nachverfolgen.                                                       |
+| Locale-Warnungen (z. B. `LC_ALL=C.UTF-8`) erscheinen in Logs | Das ist typischerweise umgebungsbedingt und fuer die Berichterzeugung nicht fatal.                                                                            |
 
 ## Roadmap
 

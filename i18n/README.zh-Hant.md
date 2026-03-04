@@ -1,5 +1,6 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # LifeReverseEngineering
 
@@ -36,13 +37,13 @@ LRE 作為協調與彙整層，而多數領域實作位於 Git 子模組：
 
 ### 快速範圍地圖
 
-| 區域 | 主要路徑 | 職責 |
-|---|---|---|
-| 🧭 協調交接 | Root repo | 管線框架 + 協調 |
-| 📄 整合報告 | `notes/lre_single_copy.md` | 單一最新版 markdown 簡報 |
-| 🩺 診斷 | `tools/lre/` | 自我修復快照與日誌 |
-| 🌐 公開落地頁 | `website/` | 根層 GitHub Pages 部署 |
-| 🧠 領域執行 | `learn/`, `earn/`, `IDEAS/` | 各軌道實作 |
+| 區域          | 主要路徑                    | 職責                     |
+| ------------- | --------------------------- | ------------------------ |
+| 🧭 協調交接   | Root repo                   | 管線框架 + 協調          |
+| 📄 整合報告   | `notes/lre_single_copy.md`  | 單一最新版 markdown 簡報 |
+| 🩺 診斷       | `tools/lre/`                | 自我修復快照與日誌       |
+| 🌐 公開落地頁 | `website/`                  | 根層 GitHub Pages 部署   |
+| 🧠 領域執行   | `learn/`, `earn/`, `IDEAS/` | 各軌道實作               |
 
 ## 狀態
 
@@ -54,12 +55,12 @@ LRE 目前處於活躍狀態，並針對以下方向最佳化：
 
 ### 目前運作態勢
 
-| 訊號 | 狀態 |
-|---|---|
-| Root pipeline posture | ✅ Active |
-| Root Pages deployment | ✅ Enabled (`website/`) |
+| 訊號                      | 狀態                                |
+| ------------------------- | ----------------------------------- |
+| Root pipeline posture     | ✅ Active                           |
+| Root Pages deployment     | ✅ Enabled (`website/`)             |
 | Root i18n README variants | 🟡 Directory present, files pending |
-| Output model | ✅ Single-copy overwrite/update |
+| Output model              | ✅ Single-copy overwrite/update     |
 
 <a id="features"></a>
 
@@ -163,11 +164,11 @@ flowchart TB
 
 ### 關鍵產物與行為
 
-| 產物 | 行為 |
-|---|---|
-| `notes/lre_single_copy.md` | 以最新整合報告覆寫／更新 |
+| 產物                                      | 行為                       |
+| ----------------------------------------- | -------------------------- |
+| `notes/lre_single_copy.md`                | 以最新整合報告覆寫／更新   |
 | `tools/lre/profile_self_heal_latest.json` | 以最新根層自我修復快照取代 |
-| `tools/lre/profile_self_heal_latest.log` | 更新為最新診斷日誌 |
+| `tools/lre/profile_self_heal_latest.log`  | 更新為最新診斷日誌         |
 
 ## 先決條件
 
@@ -303,14 +304,14 @@ git push origin main
 
 ## 疑難排解
 
-| 症狀 | 檢查／修復 |
-|---|---|
-| 克隆後子模組是空的 | 執行 `git submodule update --init --recursive`。 |
-| IDEAS 子模組驗證失敗 | 確認 `git@github.com:lachlanchen/IDEAS.git` 的 GitHub SSH 金鑰存取，或在需要時改用 HTTPS 子模組 URL。 |
-| Root Pages 網站未更新 | 確認變更檔案位於 `website/**` 或 `.github/workflows/static.yml`，且分支為 `main`。 |
-| 網站本機可渲染但自訂網域不可 | 確認 `website/CNAME` 包含 `lre.lazying.art`，且 DNS 已正確指向 GitHub Pages。 |
-| 自我修復報告看起來過舊 | 檢查 `tools/lre/` 的檔案修改時間，以及 `notes/lre_single_copy.md` 中的執行 ID。 |
-| 日誌出現語系警告（例如 `LC_ALL=C.UTF-8`） | 這通常是環境層級問題，對報告生成通常不致命。 |
+| 症狀                                      | 檢查／修復                                                                                            |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| 克隆後子模組是空的                        | 執行 `git submodule update --init --recursive`。                                                      |
+| IDEAS 子模組驗證失敗                      | 確認 `git@github.com:lachlanchen/IDEAS.git` 的 GitHub SSH 金鑰存取，或在需要時改用 HTTPS 子模組 URL。 |
+| Root Pages 網站未更新                     | 確認變更檔案位於 `website/**` 或 `.github/workflows/static.yml`，且分支為 `main`。                    |
+| 網站本機可渲染但自訂網域不可              | 確認 `website/CNAME` 包含 `lre.lazying.art`，且 DNS 已正確指向 GitHub Pages。                         |
+| 自我修復報告看起來過舊                    | 檢查 `tools/lre/` 的檔案修改時間，以及 `notes/lre_single_copy.md` 中的執行 ID。                       |
+| 日誌出現語系警告（例如 `LC_ALL=C.UTF-8`） | 這通常是環境層級問題，對報告生成通常不致命。                                                          |
 
 ## 路線圖
 

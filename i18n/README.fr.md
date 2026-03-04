@@ -1,5 +1,6 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # LifeReverseEngineering
 
@@ -36,13 +37,13 @@ LRE agit comme surface de coordination et d’agrégation, tandis que la majeure
 
 ### Carte rapide du périmètre
 
-| Zone | Chemin principal | Responsabilité |
-|---|---|---|
-| 🧭 Transmission d’orchestration | Dépôt racine | Cadrage du pipeline + coordination |
-| 📄 Rapport consolidé | `notes/lre_single_copy.md` | Briefing markdown unique le plus récent |
-| 🩺 Diagnostics | `tools/lre/` | Instantanés et journaux d’auto-réparation |
-| 🌐 Page d’accueil publique | `website/` | Déploiement GitHub Pages racine |
-| 🧠 Exécution métier | `learn/`, `earn/`, `IDEAS/` | Implémentation spécifique à chaque axe |
+| Zone                            | Chemin principal            | Responsabilité                            |
+| ------------------------------- | --------------------------- | ----------------------------------------- |
+| 🧭 Transmission d’orchestration | Dépôt racine                | Cadrage du pipeline + coordination        |
+| 📄 Rapport consolidé            | `notes/lre_single_copy.md`  | Briefing markdown unique le plus récent   |
+| 🩺 Diagnostics                  | `tools/lre/`                | Instantanés et journaux d’auto-réparation |
+| 🌐 Page d’accueil publique      | `website/`                  | Déploiement GitHub Pages racine           |
+| 🧠 Exécution métier             | `learn/`, `earn/`, `IDEAS/` | Implémentation spécifique à chaque axe    |
 
 ## Statut
 
@@ -54,12 +55,12 @@ LRE est actif et optimisé pour :
 
 ### Posture opérationnelle actuelle
 
-| Signal | État |
-|---|---|
-| Posture du pipeline racine | ✅ Active |
-| Déploiement Pages racine | ✅ Activé (`website/`) |
+| Signal                       | État                                       |
+| ---------------------------- | ------------------------------------------ |
+| Posture du pipeline racine   | ✅ Active                                  |
+| Déploiement Pages racine     | ✅ Activé (`website/`)                     |
 | Variantes README i18n racine | 🟡 Répertoire présent, fichiers en attente |
-| Modèle de sortie | ✅ Écrasement/mise à jour en copie unique |
+| Modèle de sortie             | ✅ Écrasement/mise à jour en copie unique  |
 
 ## Fonctionnalités
 
@@ -157,11 +158,11 @@ Cela rend les exécutions quotidiennes/périodiques propres, auditables et facil
 
 ### Artefacts clés et comportement
 
-| Artefact | Comportement |
-|---|---|
-| `notes/lre_single_copy.md` | Écrasé/mis à jour avec le dernier rapport consolidé |
+| Artefact                                  | Comportement                                                |
+| ----------------------------------------- | ----------------------------------------------------------- |
+| `notes/lre_single_copy.md`                | Écrasé/mis à jour avec le dernier rapport consolidé         |
 | `tools/lre/profile_self_heal_latest.json` | Remplacé par le dernier instantané d’auto-réparation racine |
-| `tools/lre/profile_self_heal_latest.log` | Journal de diagnostic "latest" mis à jour |
+| `tools/lre/profile_self_heal_latest.log`  | Journal de diagnostic "latest" mis à jour                   |
 
 ## Prérequis
 
@@ -295,14 +296,14 @@ git push origin main
 
 ## Dépannage
 
-| Symptôme | Vérification / Correctif |
-|---|---|
-| Le sous-module est vide après le clone | Exécutez `git submodule update --init --recursive`. |
-| L’authentification du sous-module IDEAS échoue | Vérifiez l’accès de clé SSH GitHub pour `git@github.com:lachlanchen/IDEAS.git`, ou basculez l’URL du sous-module en HTTPS si nécessaire. |
-| Le site Pages racine ne s’est pas mis à jour | Confirmez que les fichiers modifiés sont sous `website/**` ou `.github/workflows/static.yml` et que la branche est `main`. |
-| Le site s’affiche localement mais pas sur le domaine personnalisé | Vérifiez que `website/CNAME` contient `lre.lazying.art` et que le DNS pointe correctement vers GitHub Pages. |
-| Le rapport d’auto-réparation semble obsolète | Vérifiez les dates de modification des fichiers dans `tools/lre/` et les IDs de run dans `notes/lre_single_copy.md`. |
-| Des avertissements de locale (ex. `LC_ALL=C.UTF-8`) apparaissent dans les logs | Il s’agit généralement d’un niveau environnement et ce n’est pas bloquant pour la génération de rapports. |
+| Symptôme                                                                       | Vérification / Correctif                                                                                                                 |
+| ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Le sous-module est vide après le clone                                         | Exécutez `git submodule update --init --recursive`.                                                                                      |
+| L’authentification du sous-module IDEAS échoue                                 | Vérifiez l’accès de clé SSH GitHub pour `git@github.com:lachlanchen/IDEAS.git`, ou basculez l’URL du sous-module en HTTPS si nécessaire. |
+| Le site Pages racine ne s’est pas mis à jour                                   | Confirmez que les fichiers modifiés sont sous `website/**` ou `.github/workflows/static.yml` et que la branche est `main`.               |
+| Le site s’affiche localement mais pas sur le domaine personnalisé              | Vérifiez que `website/CNAME` contient `lre.lazying.art` et que le DNS pointe correctement vers GitHub Pages.                             |
+| Le rapport d’auto-réparation semble obsolète                                   | Vérifiez les dates de modification des fichiers dans `tools/lre/` et les IDs de run dans `notes/lre_single_copy.md`.                     |
+| Des avertissements de locale (ex. `LC_ALL=C.UTF-8`) apparaissent dans les logs | Il s’agit généralement d’un niveau environnement et ce n’est pas bloquant pour la génération de rapports.                                |
 
 ## Feuille de route
 

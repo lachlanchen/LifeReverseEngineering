@@ -1,5 +1,6 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # LifeReverseEngineering
 
@@ -36,13 +37,13 @@ LRE đóng vai trò bề mặt điều phối và tổng hợp, trong khi phần
 
 ### Bản đồ phạm vi nhanh
 
-| Khu vực | Đường dẫn chính | Trách nhiệm |
-|---|---|---|
-| 🧭 Bàn giao điều phối | Root repo | Định khung pipeline + điều phối |
-| 📄 Báo cáo hợp nhất | `notes/lre_single_copy.md` | Bản briefing markdown mới nhất duy nhất |
-| 🩺 Chẩn đoán | `tools/lre/` | Snapshot self-heal và log |
-| 🌐 Trang đích công khai | `website/` | Triển khai root GitHub Pages |
-| 🧠 Thực thi theo miền | `learn/`, `earn/`, `IDEAS/` | Triển khai theo từng track |
+| Khu vực                 | Đường dẫn chính             | Trách nhiệm                             |
+| ----------------------- | --------------------------- | --------------------------------------- |
+| 🧭 Bàn giao điều phối   | Root repo                   | Định khung pipeline + điều phối         |
+| 📄 Báo cáo hợp nhất     | `notes/lre_single_copy.md`  | Bản briefing markdown mới nhất duy nhất |
+| 🩺 Chẩn đoán            | `tools/lre/`                | Snapshot self-heal và log               |
+| 🌐 Trang đích công khai | `website/`                  | Triển khai root GitHub Pages            |
+| 🧠 Thực thi theo miền   | `learn/`, `earn/`, `IDEAS/` | Triển khai theo từng track              |
 
 ## Trạng thái
 
@@ -54,12 +55,12 @@ LRE đang hoạt động và được tối ưu cho:
 
 ### Tư thế vận hành hiện tại
 
-| Tín hiệu | Trạng thái |
-|---|---|
-| Tư thế pipeline root | ✅ Active |
-| Triển khai Pages root | ✅ Enabled (`website/`) |
+| Tín hiệu                      | Trạng thái                          |
+| ----------------------------- | ----------------------------------- |
+| Tư thế pipeline root          | ✅ Active                           |
+| Triển khai Pages root         | ✅ Enabled (`website/`)             |
 | Các biến thể README i18n root | 🟡 Directory present, files pending |
-| Mô hình đầu ra | ✅ Single-copy overwrite/update |
+| Mô hình đầu ra                | ✅ Single-copy overwrite/update     |
 
 ## Tính năng
 
@@ -157,11 +158,11 @@ Cách này giúp các lần chạy hằng ngày/định kỳ gọn gàng, dễ a
 
 ### Tạo phẩm chính và hành vi
 
-| Tạo phẩm | Hành vi |
-|---|---|
-| `notes/lre_single_copy.md` | Overwritten/updated with latest consolidated report |
-| `tools/lre/profile_self_heal_latest.json` | Replaced with latest root self-heal snapshot |
-| `tools/lre/profile_self_heal_latest.log` | Updated latest diagnostic log |
+| Tạo phẩm                                  | Hành vi                                             |
+| ----------------------------------------- | --------------------------------------------------- |
+| `notes/lre_single_copy.md`                | Overwritten/updated with latest consolidated report |
+| `tools/lre/profile_self_heal_latest.json` | Replaced with latest root self-heal snapshot        |
+| `tools/lre/profile_self_heal_latest.log`  | Updated latest diagnostic log                       |
 
 ## Điều kiện tiên quyết
 
@@ -295,14 +296,14 @@ git push origin main
 
 ## Khắc phục sự cố
 
-| Triệu chứng | Kiểm tra / Cách sửa |
-|---|---|
-| Submodule trống sau khi clone | Chạy `git submodule update --init --recursive`. |
-| Xác thực submodule IDEAS thất bại | Đảm bảo SSH key GitHub có quyền với `git@github.com:lachlanchen/IDEAS.git`, hoặc chuyển URL submodule sang HTTPS nếu cần. |
-| Site Pages root không cập nhật | Xác nhận tệp thay đổi nằm trong `website/**` hoặc `.github/workflows/static.yml` và nhánh là `main`. |
-| Website hiển thị cục bộ nhưng không hiển thị trên custom domain | Xác minh `website/CNAME` chứa `lre.lazying.art` và DNS đã trỏ đúng đến GitHub Pages. |
-| Báo cáo self-heal có vẻ cũ | Kiểm tra thời gian sửa đổi tệp trong `tools/lre/` và ID lần chạy trong `notes/lre_single_copy.md`. |
-| Cảnh báo locale (ví dụ: `LC_ALL=C.UTF-8`) xuất hiện trong log | Đây thường là vấn đề ở mức môi trường và không gây lỗi nghiêm trọng cho việc tạo báo cáo. |
+| Triệu chứng                                                     | Kiểm tra / Cách sửa                                                                                                       |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Submodule trống sau khi clone                                   | Chạy `git submodule update --init --recursive`.                                                                           |
+| Xác thực submodule IDEAS thất bại                               | Đảm bảo SSH key GitHub có quyền với `git@github.com:lachlanchen/IDEAS.git`, hoặc chuyển URL submodule sang HTTPS nếu cần. |
+| Site Pages root không cập nhật                                  | Xác nhận tệp thay đổi nằm trong `website/**` hoặc `.github/workflows/static.yml` và nhánh là `main`.                      |
+| Website hiển thị cục bộ nhưng không hiển thị trên custom domain | Xác minh `website/CNAME` chứa `lre.lazying.art` và DNS đã trỏ đúng đến GitHub Pages.                                      |
+| Báo cáo self-heal có vẻ cũ                                      | Kiểm tra thời gian sửa đổi tệp trong `tools/lre/` và ID lần chạy trong `notes/lre_single_copy.md`.                        |
+| Cảnh báo locale (ví dụ: `LC_ALL=C.UTF-8`) xuất hiện trong log   | Đây thường là vấn đề ở mức môi trường và không gây lỗi nghiêm trọng cho việc tạo báo cáo.                                 |
 
 ## Lộ trình
 

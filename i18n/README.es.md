@@ -1,5 +1,6 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # LifeReverseEngineering
 
@@ -36,13 +37,13 @@ En la raíz, LRE se enfoca en:
 
 ### Mapa rápido de alcance
 
-| Área | Ruta principal | Responsabilidad |
-|---|---|---|
-| 🧭 Traspaso de orquestación | Repositorio raíz | Definición del pipeline + coordinación |
-| 📄 Reporte consolidado | `notes/lre_single_copy.md` | Informe markdown único más reciente |
-| 🩺 Diagnósticos | `tools/lre/` | Snapshots y logs de autorreparación |
-| 🌐 Página pública de entrada | `website/` | Despliegue raíz en GitHub Pages |
-| 🧠 Ejecución por dominio | `learn/`, `earn/`, `IDEAS/` | Implementación específica por línea |
+| Área                         | Ruta principal              | Responsabilidad                        |
+| ---------------------------- | --------------------------- | -------------------------------------- |
+| 🧭 Traspaso de orquestación  | Repositorio raíz            | Definición del pipeline + coordinación |
+| 📄 Reporte consolidado       | `notes/lre_single_copy.md`  | Informe markdown único más reciente    |
+| 🩺 Diagnósticos              | `tools/lre/`                | Snapshots y logs de autorreparación    |
+| 🌐 Página pública de entrada | `website/`                  | Despliegue raíz en GitHub Pages        |
+| 🧠 Ejecución por dominio     | `learn/`, `earn/`, `IDEAS/` | Implementación específica por línea    |
 
 ## Estado
 
@@ -54,14 +55,15 @@ LRE está activo y optimizado para:
 
 ### Postura operativa actual
 
-| Señal | Estado |
-|---|---|
-| Postura del pipeline raíz | ✅ Activo |
-| Despliegue de Pages en raíz | ✅ Habilitado (`website/`) |
-| Variantes i18n del README raíz | 🟡 Directorio presente, archivos pendientes |
-| Modelo de salida | ✅ Sobrescritura/actualización de copia única |
+| Señal                          | Estado                                        |
+| ------------------------------ | --------------------------------------------- |
+| Postura del pipeline raíz      | ✅ Activo                                     |
+| Despliegue de Pages en raíz    | ✅ Habilitado (`website/`)                    |
+| Variantes i18n del README raíz | 🟡 Directorio presente, archivos pendientes   |
+| Modelo de salida               | ✅ Sobrescritura/actualización de copia única |
 
 <a id="features"></a>
+
 ## Funcionalidades
 
 - Modelo de coordinación de tres líneas (`learn`, `earn`, `IDEAS`) con límites de responsabilidad claros.
@@ -109,6 +111,7 @@ LifeReverseEngineering/
 ```
 
 <a id="pipeline-logic"></a>
+
 ## Lógica del pipeline
 
 LRE se ejecuta como un pipeline por etapas (orquestado por herramientas de prompts en el repositorio padre AgInTi):
@@ -148,6 +151,7 @@ flowchart TB
 ```
 
 <a id="single-copy-output-policy"></a>
+
 ## Política de salida de copia única
 
 Este repositorio sigue un comportamiento de sobrescritura/actualización para archivos de resumen clave:
@@ -160,11 +164,11 @@ Esto hace que las ejecuciones diarias/periódicas sean limpias, auditables y fá
 
 ### Artefactos clave y comportamiento
 
-| Artefacto | Comportamiento |
-|---|---|
-| `notes/lre_single_copy.md` | Sobrescrito/actualizado con el reporte consolidado más reciente |
+| Artefacto                                 | Comportamiento                                                   |
+| ----------------------------------------- | ---------------------------------------------------------------- |
+| `notes/lre_single_copy.md`                | Sobrescrito/actualizado con el reporte consolidado más reciente  |
 | `tools/lre/profile_self_heal_latest.json` | Reemplazado con el snapshot de autorreparación raíz más reciente |
-| `tools/lre/profile_self_heal_latest.log` | Log de diagnóstico "latest" actualizado |
+| `tools/lre/profile_self_heal_latest.log`  | Log de diagnóstico "latest" actualizado                          |
 
 ## Requisitos previos
 
@@ -298,14 +302,14 @@ git push origin main
 
 ## Resolución de problemas
 
-| Síntoma | Comprobación / Solución |
-|---|---|
-| El submódulo está vacío después de clonar | Ejecuta `git submodule update --init --recursive`. |
-| Falla la autenticación del submódulo IDEAS | Asegura acceso con clave SSH de GitHub para `git@github.com:lachlanchen/IDEAS.git`, o cambia la URL del submódulo a HTTPS si hace falta. |
-| El sitio de Pages raíz no se actualizó | Confirma que los archivos cambiados están en `website/**` o `.github/workflows/static.yml` y que la rama es `main`. |
-| El sitio renderiza localmente pero no en el dominio personalizado | Verifica que `website/CNAME` contenga `lre.lazying.art` y que el DNS apunte correctamente a GitHub Pages. |
-| El reporte de autorreparación parece desactualizado | Revisa fechas de modificación en `tools/lre/` y los IDs de ejecución en `notes/lre_single_copy.md`. |
-| Aparecen advertencias de locale (p. ej., `LC_ALL=C.UTF-8`) en los logs | Normalmente es del entorno y no es fatal para la generación de reportes. |
+| Síntoma                                                                | Comprobación / Solución                                                                                                                  |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| El submódulo está vacío después de clonar                              | Ejecuta `git submodule update --init --recursive`.                                                                                       |
+| Falla la autenticación del submódulo IDEAS                             | Asegura acceso con clave SSH de GitHub para `git@github.com:lachlanchen/IDEAS.git`, o cambia la URL del submódulo a HTTPS si hace falta. |
+| El sitio de Pages raíz no se actualizó                                 | Confirma que los archivos cambiados están en `website/**` o `.github/workflows/static.yml` y que la rama es `main`.                      |
+| El sitio renderiza localmente pero no en el dominio personalizado      | Verifica que `website/CNAME` contenga `lre.lazying.art` y que el DNS apunte correctamente a GitHub Pages.                                |
+| El reporte de autorreparación parece desactualizado                    | Revisa fechas de modificación en `tools/lre/` y los IDs de ejecución en `notes/lre_single_copy.md`.                                      |
+| Aparecen advertencias de locale (p. ej., `LC_ALL=C.UTF-8`) en los logs | Normalmente es del entorno y no es fatal para la generación de reportes.                                                                 |
 
 ## Hoja de ruta
 

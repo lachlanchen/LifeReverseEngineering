@@ -1,5 +1,6 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # LifeReverseEngineering
 
@@ -36,13 +37,13 @@ LRE는 조율 및 집계 계층 역할을 하며, 도메인별 실제 구현의 
 
 ### 빠른 범위 맵
 
-| 영역 | 주요 경로 | 책임 |
-|---|---|---|
-| 🧭 오케스트레이션 핸드오프 | 루트 저장소 | 파이프라인 프레이밍 + 조율 |
-| 📄 통합 보고서 | `notes/lre_single_copy.md` | 최신 단일 마크다운 브리핑 |
-| 🩺 진단 | `tools/lre/` | self-heal 스냅샷 및 로그 |
-| 🌐 공개 랜딩 페이지 | `website/` | 루트 GitHub Pages 배포 |
-| 🧠 도메인 실행 | `learn/`, `earn/`, `IDEAS/` | 트랙별 구현 |
+| 영역                       | 주요 경로                   | 책임                       |
+| -------------------------- | --------------------------- | -------------------------- |
+| 🧭 오케스트레이션 핸드오프 | 루트 저장소                 | 파이프라인 프레이밍 + 조율 |
+| 📄 통합 보고서             | `notes/lre_single_copy.md`  | 최신 단일 마크다운 브리핑  |
+| 🩺 진단                    | `tools/lre/`                | self-heal 스냅샷 및 로그   |
+| 🌐 공개 랜딩 페이지        | `website/`                  | 루트 GitHub Pages 배포     |
+| 🧠 도메인 실행             | `learn/`, `earn/`, `IDEAS/` | 트랙별 구현                |
 
 ## 상태
 
@@ -54,14 +55,15 @@ LRE는 현재 활성 상태이며, 다음에 최적화되어 있습니다.
 
 ### 현재 운영 상태
 
-| 신호 | 상태 |
-|---|---|
-| 루트 파이프라인 상태 | ✅ 활성 |
-| 루트 Pages 배포 | ✅ 활성화 (`website/`) |
+| 신호                  | 상태                                  |
+| --------------------- | ------------------------------------- |
+| 루트 파이프라인 상태  | ✅ 활성                               |
+| 루트 Pages 배포       | ✅ 활성화 (`website/`)                |
 | 루트 i18n README 변형 | 🟡 디렉터리는 있으나 파일은 대기 상태 |
-| 출력 모델 | ✅ 단일 사본 덮어쓰기/업데이트 |
+| 출력 모델             | ✅ 단일 사본 덮어쓰기/업데이트        |
 
 <a id="features"></a>
+
 ## 기능
 
 - 책임 경계가 명확한 3트랙 조율 모델(`learn`, `earn`, `IDEAS`).
@@ -109,6 +111,7 @@ LifeReverseEngineering/
 ```
 
 <a id="pipeline-logic"></a>
+
 ## 파이프라인 로직
 
 LRE는 단계형 파이프라인으로 실행됩니다(상위 AgInTi 저장소의 프롬프트 도구가 오케스트레이션).
@@ -148,6 +151,7 @@ flowchart TB
 ```
 
 <a id="single-copy-output-policy"></a>
+
 ## 단일 사본 출력 정책
 
 이 저장소는 핵심 요약 파일에 대해 덮어쓰기/업데이트 동작을 따릅니다.
@@ -160,11 +164,11 @@ flowchart TB
 
 ### 핵심 산출물과 동작
 
-| 산출물 | 동작 |
-|---|---|
-| `notes/lre_single_copy.md` | 최신 통합 보고서로 덮어쓰기/업데이트 |
-| `tools/lre/profile_self_heal_latest.json` | 최신 루트 self-heal 스냅샷으로 교체 |
-| `tools/lre/profile_self_heal_latest.log` | 최신 진단 로그로 업데이트 |
+| 산출물                                    | 동작                                 |
+| ----------------------------------------- | ------------------------------------ |
+| `notes/lre_single_copy.md`                | 최신 통합 보고서로 덮어쓰기/업데이트 |
+| `tools/lre/profile_self_heal_latest.json` | 최신 루트 self-heal 스냅샷으로 교체  |
+| `tools/lre/profile_self_heal_latest.log`  | 최신 진단 로그로 업데이트            |
 
 ## 사전 요구사항
 
@@ -298,14 +302,14 @@ git push origin main
 
 ## 문제 해결
 
-| 증상 | 확인 / 해결 |
-|---|---|
-| 클론 후 서브모듈이 비어 있음 | `git submodule update --init --recursive`를 실행하세요. |
-| IDEAS 서브모듈 인증 실패 | `git@github.com:lachlanchen/IDEAS.git`에 대한 GitHub SSH 키 접근을 확인하거나, 필요 시 서브모듈 URL을 HTTPS로 전환하세요. |
-| 루트 Pages 사이트가 업데이트되지 않음 | 변경 파일이 `website/**` 또는 `.github/workflows/static.yml` 아래인지, 브랜치가 `main`인지 확인하세요. |
-| 로컬에서는 웹사이트가 보이나 커스텀 도메인에서는 안 보임 | `website/CNAME`에 `lre.lazying.art`가 포함되어 있는지, DNS가 GitHub Pages를 올바르게 가리키는지 확인하세요. |
-| Self-heal 보고서가 오래된 것처럼 보임 | `tools/lre/`의 파일 수정 시간과 `notes/lre_single_copy.md`의 실행 ID를 확인하세요. |
-| 로그에 로케일 경고(예: `LC_ALL=C.UTF-8`)가 표시됨 | 일반적으로 환경 수준 이슈이며 보고서 생성에는 치명적이지 않습니다. |
+| 증상                                                     | 확인 / 해결                                                                                                               |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 클론 후 서브모듈이 비어 있음                             | `git submodule update --init --recursive`를 실행하세요.                                                                   |
+| IDEAS 서브모듈 인증 실패                                 | `git@github.com:lachlanchen/IDEAS.git`에 대한 GitHub SSH 키 접근을 확인하거나, 필요 시 서브모듈 URL을 HTTPS로 전환하세요. |
+| 루트 Pages 사이트가 업데이트되지 않음                    | 변경 파일이 `website/**` 또는 `.github/workflows/static.yml` 아래인지, 브랜치가 `main`인지 확인하세요.                    |
+| 로컬에서는 웹사이트가 보이나 커스텀 도메인에서는 안 보임 | `website/CNAME`에 `lre.lazying.art`가 포함되어 있는지, DNS가 GitHub Pages를 올바르게 가리키는지 확인하세요.               |
+| Self-heal 보고서가 오래된 것처럼 보임                    | `tools/lre/`의 파일 수정 시간과 `notes/lre_single_copy.md`의 실행 ID를 확인하세요.                                        |
+| 로그에 로케일 경고(예: `LC_ALL=C.UTF-8`)가 표시됨        | 일반적으로 환경 수준 이슈이며 보고서 생성에는 치명적이지 않습니다.                                                        |
 
 ## 로드맵
 

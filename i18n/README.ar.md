@@ -1,7 +1,8 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
-
 خيارات اللغة: **الإنجليزية (المسودة الحالية)**. تتم إدارة ملفات README متعددة اللغات على مستوى الجذر واحدًا تلو الآخر داخل `i18n/` (الدليل موجود؛ الملفات قيد الإضافة).
+
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # LifeReverseEngineering
 
@@ -38,13 +39,13 @@ LifeReverseEngineering (LRE) هي مساحة عمل شخصية للبحث الع
 
 ### خريطة النطاق السريعة
 
-| Area | Primary Path | Responsibility |
-|---|---|---|
-| 🧭 تسليم التنسيق | Root repo | تأطير خط الأنابيب + التنسيق |
-| 📄 التقرير الموحّد | `notes/lre_single_copy.md` | أحدث إحاطة Markdown بنسخة واحدة |
-| 🩺 التشخيصات | `tools/lre/` | لقطات وسجلات الإصلاح الذاتي |
-| 🌐 صفحة الهبوط العامة | `website/` | نشر GitHub Pages على مستوى الجذر |
-| 🧠 التنفيذ حسب المجال | `learn/`, `earn/`, `IDEAS/` | تنفيذ خاص بكل مسار |
+| Area                  | Primary Path                | Responsibility                   |
+| --------------------- | --------------------------- | -------------------------------- |
+| 🧭 تسليم التنسيق      | Root repo                   | تأطير خط الأنابيب + التنسيق      |
+| 📄 التقرير الموحّد    | `notes/lre_single_copy.md`  | أحدث إحاطة Markdown بنسخة واحدة  |
+| 🩺 التشخيصات          | `tools/lre/`                | لقطات وسجلات الإصلاح الذاتي      |
+| 🌐 صفحة الهبوط العامة | `website/`                  | نشر GitHub Pages على مستوى الجذر |
+| 🧠 التنفيذ حسب المجال | `learn/`, `earn/`, `IDEAS/` | تنفيذ خاص بكل مسار               |
 
 ## الحالة
 
@@ -56,12 +57,12 @@ LRE نشط ومهيأ لـ:
 
 ### الوضع التشغيلي الحالي
 
-| Signal | State |
-|---|---|
-| وضع خط الأنابيب في الجذر | ✅ نشط |
-| نشر Pages للجذر | ✅ مفعّل (`website/`) |
+| Signal                                | State                                 |
+| ------------------------------------- | ------------------------------------- |
+| وضع خط الأنابيب في الجذر              | ✅ نشط                                |
+| نشر Pages للجذر                       | ✅ مفعّل (`website/`)                 |
 | متغيرات README متعددة اللغات في الجذر | 🟡 الدليل موجود، والملفات قيد الإضافة |
-| نموذج المخرجات | ✅ تحديث/استبدال بنسخة واحدة |
+| نموذج المخرجات                        | ✅ تحديث/استبدال بنسخة واحدة          |
 
 ## الميزات
 
@@ -159,11 +160,11 @@ flowchart TB
 
 ### العناصر الأساسية وسلوكها
 
-| Artifact | Behavior |
-|---|---|
-| `notes/lre_single_copy.md` | يُستبدل/يُحدّث بأحدث تقرير موحّد |
+| Artifact                                  | Behavior                                      |
+| ----------------------------------------- | --------------------------------------------- |
+| `notes/lre_single_copy.md`                | يُستبدل/يُحدّث بأحدث تقرير موحّد              |
 | `tools/lre/profile_self_heal_latest.json` | يُستبدل بأحدث لقطة إصلاح ذاتي على مستوى الجذر |
-| `tools/lre/profile_self_heal_latest.log` | يُحدّث إلى أحدث سجل تشخيص |
+| `tools/lre/profile_self_heal_latest.log`  | يُحدّث إلى أحدث سجل تشخيص                     |
 
 ## المتطلبات المسبقة
 
@@ -297,14 +298,14 @@ git push origin main
 
 ## استكشاف الأخطاء وإصلاحها
 
-| Symptom | Check / Fix |
-|---|---|
-| الوحدة الفرعية فارغة بعد الاستنساخ | نفّذ `git submodule update --init --recursive`. |
-| فشل مصادقة وحدة IDEAS الفرعية | تأكد من صلاحية مفتاح SSH على GitHub لـ `git@github.com:lachlanchen/IDEAS.git`، أو بدّل رابط الوحدة الفرعية إلى HTTPS عند الحاجة. |
-| موقع Pages للجذر لم يتحدث | تأكد أن الملفات المعدّلة ضمن `website/**` أو `.github/workflows/static.yml` وأن الفرع هو `main`. |
-| الموقع يعمل محليًا ولكن لا يعمل على النطاق المخصص | تحقق من أن `website/CNAME` يحتوي `lre.lazying.art` وأن DNS موجّه بشكل صحيح إلى GitHub Pages. |
-| تقرير الإصلاح الذاتي يبدو قديمًا | افحص أوقات تعديل الملفات في `tools/lre/` ومعرفات التشغيل في `notes/lre_single_copy.md`. |
-| تحذيرات Locale (مثل `LC_ALL=C.UTF-8`) تظهر في السجلات | غالبًا تكون على مستوى البيئة وليست قاتلة لتوليد التقارير. |
+| Symptom                                               | Check / Fix                                                                                                                      |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| الوحدة الفرعية فارغة بعد الاستنساخ                    | نفّذ `git submodule update --init --recursive`.                                                                                  |
+| فشل مصادقة وحدة IDEAS الفرعية                         | تأكد من صلاحية مفتاح SSH على GitHub لـ `git@github.com:lachlanchen/IDEAS.git`، أو بدّل رابط الوحدة الفرعية إلى HTTPS عند الحاجة. |
+| موقع Pages للجذر لم يتحدث                             | تأكد أن الملفات المعدّلة ضمن `website/**` أو `.github/workflows/static.yml` وأن الفرع هو `main`.                                 |
+| الموقع يعمل محليًا ولكن لا يعمل على النطاق المخصص     | تحقق من أن `website/CNAME` يحتوي `lre.lazying.art` وأن DNS موجّه بشكل صحيح إلى GitHub Pages.                                     |
+| تقرير الإصلاح الذاتي يبدو قديمًا                      | افحص أوقات تعديل الملفات في `tools/lre/` ومعرفات التشغيل في `notes/lre_single_copy.md`.                                          |
+| تحذيرات Locale (مثل `LC_ALL=C.UTF-8`) تظهر في السجلات | غالبًا تكون على مستوى البيئة وليست قاتلة لتوليد التقارير.                                                                        |
 
 ## خارطة الطريق
 

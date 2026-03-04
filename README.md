@@ -2,6 +2,8 @@
 
 Language options: **English (current draft)**. Root-level multilingual README files are managed one-by-one in `i18n/` (directory exists; files pending).
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+
 # LifeReverseEngineering
 
 [![Repository](https://img.shields.io/badge/repo-LifeReverseEngineering-0b7285?logo=github)](https://github.com/lachlanchen/LifeReverseEngineering)
@@ -37,13 +39,13 @@ At root, LRE focuses on:
 
 ### Quick Scope Map
 
-| Area | Primary Path | Responsibility |
-|---|---|---|
-| 🧭 Orchestration handoff | Root repo | Pipeline framing + coordination |
-| 📄 Consolidated report | `notes/lre_single_copy.md` | Single latest markdown briefing |
-| 🩺 Diagnostics | `tools/lre/` | Self-heal snapshots and logs |
-| 🌐 Public landing page | `website/` | Root GitHub Pages deployment |
-| 🧠 Domain execution | `learn/`, `earn/`, `IDEAS/` | Track-specific implementation |
+| Area                     | Primary Path                | Responsibility                  |
+| ------------------------ | --------------------------- | ------------------------------- |
+| 🧭 Orchestration handoff | Root repo                   | Pipeline framing + coordination |
+| 📄 Consolidated report   | `notes/lre_single_copy.md`  | Single latest markdown briefing |
+| 🩺 Diagnostics           | `tools/lre/`                | Self-heal snapshots and logs    |
+| 🌐 Public landing page   | `website/`                  | Root GitHub Pages deployment    |
+| 🧠 Domain execution      | `learn/`, `earn/`, `IDEAS/` | Track-specific implementation   |
 
 ## Status
 
@@ -55,12 +57,12 @@ LRE is active and optimized for:
 
 ### Current Operational Posture
 
-| Signal | State |
-|---|---|
-| Root pipeline posture | ✅ Active |
-| Root Pages deployment | ✅ Enabled (`website/`) |
+| Signal                    | State                               |
+| ------------------------- | ----------------------------------- |
+| Root pipeline posture     | ✅ Active                           |
+| Root Pages deployment     | ✅ Enabled (`website/`)             |
 | Root i18n README variants | 🟡 Directory present, files pending |
-| Output model | ✅ Single-copy overwrite/update |
+| Output model              | ✅ Single-copy overwrite/update     |
 
 ## Features
 
@@ -158,11 +160,11 @@ This makes daily/periodic runs clean, auditable, and easy to inspect.
 
 ### Key Artifacts and Behavior
 
-| Artifact | Behavior |
-|---|---|
-| `notes/lre_single_copy.md` | Overwritten/updated with latest consolidated report |
-| `tools/lre/profile_self_heal_latest.json` | Replaced with latest root self-heal snapshot |
-| `tools/lre/profile_self_heal_latest.log` | Updated latest diagnostic log |
+| Artifact                                  | Behavior                                            |
+| ----------------------------------------- | --------------------------------------------------- |
+| `notes/lre_single_copy.md`                | Overwritten/updated with latest consolidated report |
+| `tools/lre/profile_self_heal_latest.json` | Replaced with latest root self-heal snapshot        |
+| `tools/lre/profile_self_heal_latest.log`  | Updated latest diagnostic log                       |
 
 ## Prerequisites
 
@@ -296,14 +298,14 @@ git push origin main
 
 ## Troubleshooting
 
-| Symptom | Check / Fix |
-|---|---|
-| Submodule is empty after clone | Run `git submodule update --init --recursive`. |
-| IDEAS submodule authentication fails | Ensure GitHub SSH key access for `git@github.com:lachlanchen/IDEAS.git`, or switch submodule URL to HTTPS if needed. |
-| Root Pages site did not update | Confirm changed files are under `website/**` or `.github/workflows/static.yml` and branch is `main`. |
-| Website renders locally but not on custom domain | Verify `website/CNAME` contains `lre.lazying.art` and DNS is correctly pointed to GitHub Pages. |
-| Self-heal report appears stale | Check file modification times in `tools/lre/` and track run IDs in `notes/lre_single_copy.md`. |
-| Locale warnings (e.g., `LC_ALL=C.UTF-8`) appear in logs | This is typically environment-level and non-fatal for report generation. |
+| Symptom                                                 | Check / Fix                                                                                                          |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Submodule is empty after clone                          | Run `git submodule update --init --recursive`.                                                                       |
+| IDEAS submodule authentication fails                    | Ensure GitHub SSH key access for `git@github.com:lachlanchen/IDEAS.git`, or switch submodule URL to HTTPS if needed. |
+| Root Pages site did not update                          | Confirm changed files are under `website/**` or `.github/workflows/static.yml` and branch is `main`.                 |
+| Website renders locally but not on custom domain        | Verify `website/CNAME` contains `lre.lazying.art` and DNS is correctly pointed to GitHub Pages.                      |
+| Self-heal report appears stale                          | Check file modification times in `tools/lre/` and track run IDs in `notes/lre_single_copy.md`.                       |
+| Locale warnings (e.g., `LC_ALL=C.UTF-8`) appear in logs | This is typically environment-level and non-fatal for report generation.                                             |
 
 ## Roadmap
 
