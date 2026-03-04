@@ -1,0 +1,10 @@
+ar|Arabic|i18n/README.ar.md
+es|Spanish|i18n/README.es.md
+fr|French|i18n/README.fr.md
+ja|Japanese|i18n/README.ja.md
+ko|Korean|i18n/README.ko.md
+vi|Vietnamese|i18n/README.vi.md
+zh-Hans|Chinese Simplified|i18n/README.zh-Hans.md
+zh-Hant|Chinese Traditional|i18n/README.zh-Hant.md
+de|Deutsch|i18n/README.de.md
+ru|Russian|i18n/README.ru.md
