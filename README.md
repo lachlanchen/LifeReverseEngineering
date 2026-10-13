@@ -2,7 +2,7 @@
 
 Language options: **English (current draft)**. Root-level multilingual README files are managed one-by-one in `i18n/` (directory exists; files pending).
 
-[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://lazying.art)
+[![LazyingArt banner — apps and four buddies](https://github.com/lachlanchen/LazyingArtWebsite/raw/main/media/brand/lazyingart-intro.gif)](https://lazying.art)
 
 # LifeReverseEngineering
 

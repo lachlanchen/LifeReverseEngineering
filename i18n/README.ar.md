@@ -2,7 +2,7 @@
 
 خيارات اللغة: **الإنجليزية (المسودة الحالية)**. تتم إدارة ملفات README متعددة اللغات على مستوى الجذر واحدًا تلو الآخر داخل `i18n/` (الدليل موجود؛ الملفات قيد الإضافة).
 
-[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://lazying.art)
+[![LazyingArt banner — apps and four buddies](https://github.com/lachlanchen/LazyingArtWebsite/raw/main/media/brand/lazyingart-intro.gif)](https://lazying.art)
 
 # LifeReverseEngineering
 
