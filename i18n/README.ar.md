@@ -2,7 +2,7 @@
 
 خيارات اللغة: **الإنجليزية (المسودة الحالية)**. تتم إدارة ملفات README متعددة اللغات على مستوى الجذر واحدًا تلو الآخر داخل `i18n/` (الدليل موجود؛ الملفات قيد الإضافة).
 
-[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://lazying.art)
 
 # LifeReverseEngineering
 
@@ -352,3 +352,7 @@ git push origin main
 لا يوجد ملف `LICENSE` على مستوى الجذر في هذا المستودع حتى تاريخ 3 مارس 2026.
 
 افتراض: إلى أن تتم إضافة ترخيص، لا تُمنح حقوق الاستخدام صراحةً بما يتجاوز توقعات الظهور القياسية في GitHub. أضف ملف `LICENSE` لتوضيح شروط إعادة الاستخدام.
+
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://img.shields.io/badge/Donate-LazyingArt-0EA5E9?style=for-the-badge&logo=kofi&logoColor=white)](https://chat.lazying.art/donate) | [![PayPal](https://img.shields.io/badge/PayPal-RongzhouChen-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/RongzhouChen) | [![Stripe](https://img.shields.io/badge/Stripe-Donate-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |

@@ -2,7 +2,7 @@
 
 Language options: **English (current draft)**. Root-level multilingual README files are managed one-by-one in `i18n/` (directory exists; files pending).
 
-[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://lazying.art)
 
 # LifeReverseEngineering
 
@@ -352,3 +352,7 @@ Funding and support links (from `.github/FUNDING.yml`):
 No root `LICENSE` file is present in this repository as of March 3, 2026.
 
 Assumption: until a license is added, usage rights are not explicitly granted beyond standard GitHub visibility expectations. Add a `LICENSE` file to make reuse terms explicit.
+
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://img.shields.io/badge/Donate-LazyingArt-0EA5E9?style=for-the-badge&logo=kofi&logoColor=white)](https://chat.lazying.art/donate) | [![PayPal](https://img.shields.io/badge/PayPal-RongzhouChen-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/RongzhouChen) | [![Stripe](https://img.shields.io/badge/Stripe-Donate-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
